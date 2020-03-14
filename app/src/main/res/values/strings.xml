@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Greeter</string>
+    <string name="hello_message">Hello</string>
+    <string name="bye_message">Bye</string>
+    <string name="empty_message">\???</string>
+    <string name="greet_button">Greet</string>
+</resources>
