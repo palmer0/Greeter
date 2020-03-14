@@ -26,7 +26,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class HelloInstrumentedTests {
 
-  private static final String EMPTY_MSG = "???";
   private static final String HELLO_MSG = "Hello";
   private static final String BYE_MSG = "Bye";
 

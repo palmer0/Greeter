@@ -52,67 +52,6 @@ public class HelloPresenter implements HelloContract.Presenter {
     updateState(state.data);
   }
 
-//  @Override
-//  public void resetData() {
-//    //Log.e(TAG, "resetData()");
-//
-//    // call the model
-//    state.data = model.getData();
-//  }
-//
-//  @Override
-//  public void getData() {
-//    //Log.e(TAG, "getData()");
-//
-//    // use passed state if is necessary
-//    HelloState savedState = router.getDataFromPreviousScreen();
-//    if (savedState != null) {
-//
-//      /*
-//      // update view and model state
-//      state.data = savedState.data;
-//
-//      // update the view
-//      view.get().displayData(state);
-//      */
-//
-//      // update the state
-//      updateState(savedState.data);
-//
-//      return;
-//    }
-//
-//    // initialize the state if is necessary
-//    if (state.data == null) {
-//
-//      // call the model
-//      state.data = model.getData();;
-//    }
-//
-//    // update the state
-//    updateState(state.data);
-//
-//    /*
-//    // set view state
-//    state.data = data;
-//
-//    // update the view
-//    view.get().displayData(state);
-//    */
-//  }
-//
-//
-//  @Override
-//  public void updateData(String data) {
-//    // Log.e(TAG, "updateData()");
-//
-//    // call the model
-//    //model.updateData(data);
-//
-//    // update the state
-//    updateState(data);
-//  }
-
   @Override
   public void onGreetButtonClicked(String data) {
     // Log.e(TAG, "onGreetButtonClicked()");

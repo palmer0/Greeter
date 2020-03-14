@@ -24,7 +24,7 @@ public class HelloUnitTests {
   public void modelFetchData() {
 
     // Given
-    HelloContract.Model model = new HelloModel();
+    HelloContract.Model model = new HelloModel(HELLO_MSG);
 
     // When
     String data = model.getData();
@@ -107,7 +107,7 @@ public class HelloUnitTests {
     // Given
     HelloState state = new HelloState();
     HelloContract.Presenter presenter = new HelloPresenter(state);
-    HelloContract.Model model = new HelloModel();
+    HelloContract.Model model = new HelloModel(HELLO_MSG);
     presenter.injectModel(model);
     HelloContract.Router router = new MockHelloRouter();
     presenter.injectRouter(router);
@@ -247,7 +247,7 @@ public class HelloUnitTests {
     // Given
     HelloState state = new HelloState();
     HelloContract.Presenter presenter = new HelloPresenter(state);
-    HelloContract.Model model = new HelloModel();
+    HelloContract.Model model = new HelloModel(HELLO_MSG);
     presenter.injectModel(model);
     HelloContract.Router router = new MockHelloRouter();
     HelloState savedState = new HelloState();

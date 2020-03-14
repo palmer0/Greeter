@@ -6,10 +6,6 @@ public class HelloModel implements HelloContract.Model {
 
   private String data;
 
-  public HelloModel() {
-    data="Hello";
-  }
-
   public HelloModel(String message) {
     data=message;
   }
@@ -19,11 +15,5 @@ public class HelloModel implements HelloContract.Model {
     //Log.e(TAG, "getData()");
     return data;
   }
-
-//  @Override
-//  public void updateData(String data) {
-//    //Log.e(TAG, "updateData()");
-//    this.data=data;
-//  }
 
 }

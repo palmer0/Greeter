@@ -9,17 +9,11 @@ public class HelloRouter implements HelloContract.Router {
 
   public static String TAG = HelloRouter.class.getSimpleName();
 
-  //private final Context context;
-
   private AppMediator mediator;
 
   public HelloRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
-
-//  public HelloRouter(Context context ) {
-//    this.context = context;
-//  }
 
   @Override
   public void navigateToNextScreen() {
@@ -30,7 +24,6 @@ public class HelloRouter implements HelloContract.Router {
 
   @Override
   public void passDataToNextScreen(HelloState state) {
-    //AppMediator mediator = AppMediator.getInstance();
     mediator.setHelloState(state);
   }
 
@@ -39,11 +32,4 @@ public class HelloRouter implements HelloContract.Router {
     return null;
   }
 
-  /*
-  @Override
-  public HelloState getDataFromPreviousScreen() {
-    HelloState state = mediator.getHelloState();
-    return state;
-  }
-  */
 }

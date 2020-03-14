@@ -72,19 +72,6 @@ public class HelloMockitoTests {
     presenter.injectRouter(mockRouter);
     presenter.injectView(new WeakReference<>(mockView));
 
-    /*
-    doAnswer(new Answer() {
-
-      @Override
-      public HelloViewModel answer(InvocationOnMock invocation) {
-
-        Object[] args = invocation.getArguments();
-        HelloViewModel viewModel = (HelloViewModel) args[0];
-        return viewModel;
-      }
-    }).when(mockView).displayData(any(HelloViewModel.class));
-    */
-
     // When
     presenter.onStart();
     presenter.onResume();
@@ -92,10 +79,6 @@ public class HelloMockitoTests {
     // Then
     verify(mockRouter, times(1))
         .getDataFromPreviousScreen();
-    /*
-    verify(mockView, times(1))
-        .displayData(any(HelloViewModel.class));
-    */
     verify(mockView, times(1))
         .displayData(vmCaptor.capture());
     String data = vmCaptor.getValue().data;

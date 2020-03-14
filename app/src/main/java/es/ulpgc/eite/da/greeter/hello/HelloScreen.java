@@ -17,13 +17,10 @@ public class HelloScreen {
     String message = context.get().getString(R.string.hello_message);
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
-    //AppMediator mediator = AppMediator.getInstance();
     HelloState state = mediator.getHelloState();
 
     HelloContract.Router router = new HelloRouter(mediator);
-    //HelloContract.Router router = new HelloRouter(context.get());
     HelloContract.Presenter presenter = new HelloPresenter(state);
-    //HelloContract.Model model = new HelloModel();
     HelloContract.Model model = new HelloModel(message);
     presenter.injectModel(model);
     presenter.injectRouter(router);

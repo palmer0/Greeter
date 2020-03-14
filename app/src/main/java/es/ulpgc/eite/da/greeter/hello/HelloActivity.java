@@ -25,7 +25,6 @@ public class HelloActivity
     HelloScreen.configure(this);
 
     if(savedInstanceState == null) {
-      //presenter.resetData();
       presenter.onStart();
 
     } else {
@@ -41,38 +40,18 @@ public class HelloActivity
 
     // load the data
     presenter.onResume();
-    //presenter.getData();
   }
 
-//  @Override
-//  protected void onStart() {
-//    super.onStart();
-//    Log.e(TAG, "onStart()");
-//  }
-//
-//  @Override
-//  protected void onRestart() {
-//    super.onRestart();
-//    Log.e(TAG, "onRestart()");
-//  }
-//
-//  @Override
-//  protected void onDestroy() {
-//    super.onDestroy();
-//    Log.e(TAG, "onDestroy()");
-//  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    //Log.e(TAG, "onDestroy()");
+  }
 
   @Override
   public void displayData(HelloViewModel viewModel) {
     //Log.e(TAG, "displayData()");
-
-    /*
-    AppMediator mediator = (AppMediator) getApplication();
-    HelloState state = mediator.getHelloState();
-    if(state != null) {
-      Log.e(TAG, "data=" + state.data);
-    }
-    */
 
     // deal with the data
     ((TextView) findViewById(R.id.greetTextView)).setText(viewModel.data);
@@ -84,7 +63,6 @@ public class HelloActivity
   }
 
   public void greetButtonClicked(View view) {
-    //presenter.updateData(getString(R.string.bye_message));
     presenter.onGreetButtonClicked(getString(R.string.bye_message));
   }
 }
