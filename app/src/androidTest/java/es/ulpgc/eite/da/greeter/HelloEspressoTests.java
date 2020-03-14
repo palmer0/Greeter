@@ -69,6 +69,7 @@ public class HelloEspressoTests {
   }
 
   private void rotateScreen() {
+
     Context context = ApplicationProvider.getApplicationContext();
     int orientation = context.getResources().getConfiguration().orientation;
     Activity activity = activityTestRule.getActivity();
