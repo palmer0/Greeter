@@ -43,24 +43,16 @@ public class HelloPresenter implements HelloContract.Presenter {
     if (savedState != null) {
 
       // update the state
-      updateState(savedState.data);
-
-      return;
+      state.data = savedState.data;
     }
 
-    // update the state
-    updateState(state.data);
+    // update the view
+    view.get().displayData(state);
   }
 
   @Override
   public void onGreetButtonClicked(String data) {
     // Log.e(TAG, "onGreetButtonClicked()");
-
-    // update the state
-    updateState(data);
-  }
-
-  private void updateState(String data) {
 
     // set view state
     state.data = data;
