@@ -24,12 +24,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class HelloInstrumentedTests {
+public class HelloEspressoTests {
 
   private static final String HELLO_MSG = "Hello";
   private static final String BYE_MSG = "Bye";
 
-  private static final long DELAY = 2000;
+  private static final long DELAY = 0;
 
 
   @Rule
