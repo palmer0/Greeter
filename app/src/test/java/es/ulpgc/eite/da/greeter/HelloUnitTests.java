@@ -19,7 +19,6 @@ public class HelloUnitTests {
   private static final String HELLO_MSG = "Hello";
   private static final String BYE_MSG = "Bye";
 
-
   @Test
   public void modelFetchData() {
 
@@ -32,7 +31,6 @@ public class HelloUnitTests {
     // Then
     assertEquals(HELLO_MSG, data);
   }
-
 
   @Test
   public void modelFetchCleanedData() {
@@ -49,7 +47,6 @@ public class HelloUnitTests {
       public String getData() {
         return data;
       }
-
     }
 
     // Given
@@ -138,7 +135,6 @@ public class HelloUnitTests {
       public String getData() {
         return data;
       }
-
     }
 
     class MockHelloRouter implements HelloContract.Router {
