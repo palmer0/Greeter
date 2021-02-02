@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import es.ulpgc.eite.da.greeter.AppMediator;
 import es.ulpgc.eite.da.greeter.R;
 
 public class HelloActivity
@@ -21,6 +22,10 @@ public class HelloActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hello);
     //Log.e(TAG, "onCreate()");
+
+    if(savedInstanceState == null) {
+      AppMediator.resetInstance();
+    }
 
     // do the setup
     HelloScreen.configure(this);
