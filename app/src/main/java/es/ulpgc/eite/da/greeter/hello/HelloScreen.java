@@ -16,7 +16,8 @@ public class HelloScreen {
 
     String message = context.get().getString(R.string.hello_message);
 
-    AppMediator mediator = (AppMediator) context.get().getApplication();
+    //AppMediator mediator = (AppMediator) context.get().getApplication();
+    AppMediator mediator = AppMediator.getInstance();
     HelloState state = mediator.getHelloState();
 
     HelloContract.Router router = new HelloRouter(mediator);

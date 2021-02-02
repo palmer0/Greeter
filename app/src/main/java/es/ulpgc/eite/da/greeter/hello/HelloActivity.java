@@ -1,5 +1,6 @@
 package es.ulpgc.eite.da.greeter.hello;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -47,6 +48,12 @@ public class HelloActivity
   protected void onDestroy() {
     super.onDestroy();
     //Log.e(TAG, "onDestroy()");
+  }
+
+  @Override
+  public void navigateToNextScreen() {
+    Intent intent = new Intent(this, HelloActivity.class);
+    startActivity(intent);
   }
 
   @Override

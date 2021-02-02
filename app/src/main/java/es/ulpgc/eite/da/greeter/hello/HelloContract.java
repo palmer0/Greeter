@@ -7,6 +7,8 @@ public interface HelloContract {
   interface View {
     void injectPresenter(Presenter presenter);
     void displayData(HelloViewModel viewModel);
+    void navigateToNextScreen();
+
   }
 
   interface Presenter {
@@ -24,7 +26,6 @@ public interface HelloContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
     void passDataToNextScreen(HelloState state);
     HelloState getDataFromPreviousScreen();
   }

@@ -1,8 +1,5 @@
 package es.ulpgc.eite.da.greeter.hello;
 
-import android.content.Context;
-import android.content.Intent;
-
 import es.ulpgc.eite.da.greeter.AppMediator;
 
 public class HelloRouter implements HelloContract.Router {
@@ -15,12 +12,12 @@ public class HelloRouter implements HelloContract.Router {
     this.mediator = mediator;
   }
 
-  @Override
-  public void navigateToNextScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, HelloActivity.class);
-    context.startActivity(intent);
-  }
+//  @Override
+//  public void navigateToNextScreen() {
+//    Context context = mediator.getApplicationContext();
+//    Intent intent = new Intent(context, HelloActivity.class);
+//    context.startActivity(intent);
+//  }
 
   @Override
   public void passDataToNextScreen(HelloState state) {
