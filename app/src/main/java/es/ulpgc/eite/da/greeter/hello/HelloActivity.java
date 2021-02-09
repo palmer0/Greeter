@@ -17,10 +17,12 @@ public class HelloActivity
 
   private HelloContract.Presenter presenter;
 
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hello);
+    
     //Log.e(TAG, "onCreate()");
 
     if(savedInstanceState == null) {
@@ -36,6 +38,7 @@ public class HelloActivity
     } else {
       presenter.onRestart();
     }
+
   }
 
 
@@ -47,7 +50,6 @@ public class HelloActivity
     // load the data
     presenter.onResume();
   }
-
 
   @Override
   protected void onDestroy() {

@@ -30,7 +30,7 @@ public class HelloPresenter implements HelloContract.Presenter {
     if (state.data == null) {
 
       // call the model
-      state.data = model.getData();;
+      state.data = model.getData();
     }
 
   }
