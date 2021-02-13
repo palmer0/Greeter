@@ -5,14 +5,6 @@ import es.ulpgc.eite.da.greeter.hello.HelloState;
 public class AppMediator {
 
   private HelloState helloState;
-  //private HelloState helloState = new HelloState();
-
-//  @Override
-//  public void onCreate() {
-//    super.onCreate();
-//
-//    helloState = new HelloState();
-//  }
 
   private static AppMediator INSTANCE;
 

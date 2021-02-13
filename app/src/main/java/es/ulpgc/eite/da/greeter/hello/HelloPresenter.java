@@ -12,13 +12,6 @@ public class HelloPresenter implements HelloContract.Presenter {
   private WeakReference<HelloContract.View> view;
   private HelloState state;
   private HelloContract.Model model;
-  //private HelloContract.Router router;
-
-  /*
-  public HelloPresenter(HelloState state) {
-    this.state = state;
-  }
-  */
 
   public HelloPresenter(AppMediator mediator) {
     this.mediator = mediator;
@@ -50,7 +43,6 @@ public class HelloPresenter implements HelloContract.Presenter {
 
     // use passed state if is necessary
     HelloState savedState = getDataFromPreviousScreen();
-    //HelloState savedState = router.getDataFromPreviousScreen();
     if (savedState != null) {
 
       // update the state
@@ -89,12 +81,5 @@ public class HelloPresenter implements HelloContract.Presenter {
   public void injectModel(HelloContract.Model model) {
     this.model = model;
   }
-
-  /*
-  @Override
-  public void injectRouter(HelloContract.Router router) {
-    this.router = router;
-  }
-  */
 
 }

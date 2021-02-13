@@ -14,7 +14,6 @@ public interface HelloContract {
   interface Presenter {
     void injectView(WeakReference<View> view);
     void injectModel(Model model);
-    //void injectRouter(Router router);
 
     void onStart();
     void onRestart();
@@ -26,10 +25,4 @@ public interface HelloContract {
     String getData();
   }
 
-  /*
-  interface Router {
-    void passDataToNextScreen(HelloState state);
-    HelloState getDataFromPreviousScreen();
-  }
-  */
 }
