@@ -87,36 +87,12 @@ public class HelloUnitTests {
       }
     }
 
-    /*
-    class MockHelloRouter implements HelloContract.Router{
-
-
-      @Override
-      public void navigateToNextScreen() {
-
-      }
-
-      @Override
-      public void passDataToNextScreen(HelloState state) {
-
-      }
-
-      @Override
-      public HelloState getDataFromPreviousScreen() {
-        return null;
-      }
-    }
-    */
 
     // Given
-    //HelloState state = new HelloState();
-    //HelloContract.Presenter presenter = new HelloPresenter(state);
     AppMediator mediator = AppMediator.getInstance();
     HelloContract.Presenter presenter = new HelloPresenter(mediator);
     HelloContract.Model model = new HelloModel(HELLO_MSG);
     presenter.injectModel(model);
-    //HelloContract.Router router = new MockHelloRouter();
-    //presenter.injectRouter(router);
     HelloContract.View view = new MockHelloActivity();
     presenter.injectView(new WeakReference<>(view));
 
@@ -146,25 +122,6 @@ public class HelloUnitTests {
       }
     }
 
-    /*
-    class MockHelloRouter implements HelloContract.Router {
-
-      @Override
-      public void navigateToNextScreen() {
-
-      }
-
-      @Override
-      public void passDataToNextScreen(HelloState state) {
-
-      }
-
-      @Override
-      public HelloState getDataFromPreviousScreen() {
-        return null;
-      }
-    }
-    */
 
     class MockHelloActivity implements HelloContract.View{
 
@@ -191,15 +148,11 @@ public class HelloUnitTests {
     }
 
     // Given
-    //HelloState state = new HelloState();
-    //HelloContract.Presenter presenter = new HelloPresenter(state);
     AppMediator mediator = AppMediator.getInstance();
     HelloContract.Presenter presenter = new HelloPresenter(mediator);
     HelloContract.Model model = new MockHelloModel();
     ((MockHelloModel) model).setData(EMPTY_MSG);
     presenter.injectModel(model);
-    //HelloContract.Router router = new MockHelloRouter();
-    //presenter.injectRouter(router);
     HelloContract.View view = new MockHelloActivity();
     presenter.injectView(new WeakReference<>(view));
 
@@ -239,45 +192,15 @@ public class HelloUnitTests {
       }
     }
 
-    /*
-    class MockHelloRouter implements HelloContract.Router{
-
-      private HelloState state;
-
-      public void setState(HelloState state) {
-        this.state = state;
-      }
-
-      @Override
-      public void navigateToNextScreen() {
-
-      }
-
-      @Override
-      public void passDataToNextScreen(HelloState state) {
-
-      }
-
-      @Override
-      public HelloState getDataFromPreviousScreen() {
-        return state;
-      }
-    }
-    */
 
     // Given
-    //HelloState state = new HelloState();
-    //HelloContract.Presenter presenter = new HelloPresenter(state);
     AppMediator mediator = AppMediator.getInstance();
     HelloContract.Presenter presenter = new HelloPresenter(mediator);
     HelloContract.Model model = new HelloModel(HELLO_MSG);
     presenter.injectModel(model);
-    //HelloContract.Router router = new MockHelloRouter();
     HelloState savedState = new HelloState();
     savedState.data=BYE_MSG;
     mediator.setHelloState(savedState);
-    //((MockHelloRouter) router).setState(savedState);
-    //presenter.injectRouter(router);
     HelloContract.View view = new MockHelloActivity();
     presenter.injectView(new WeakReference<>(view));
 

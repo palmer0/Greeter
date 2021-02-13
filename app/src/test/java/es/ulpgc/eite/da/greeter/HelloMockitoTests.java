@@ -34,9 +34,6 @@ public class HelloMockitoTests {
   @Mock
   Context mockContext;
 
-//  @Mock
-//  HelloContract.Router mockRouter;
-
   @Mock
   HelloContract.View mockView;
 
@@ -64,14 +61,11 @@ public class HelloMockitoTests {
 
     // Given
     when(mockContext.getString(R.string.hello_message)).thenReturn(HELLO_MSG);
-    //when(mockRouter.getDataFromPreviousScreen()).thenReturn(null);
-    //HelloContract.Presenter presenter = new HelloPresenter(new HelloState());
     AppMediator mediator = AppMediator.getInstance();
     HelloContract.Presenter presenter = new HelloPresenter(mediator);
     String message = mockContext.getString(R.string.hello_message);
     HelloContract.Model model = new HelloModel(message);
     presenter.injectModel(model);
-    //presenter.injectRouter(mockRouter);
     presenter.injectView(new WeakReference<>(mockView));
 
     // When
@@ -79,7 +73,6 @@ public class HelloMockitoTests {
     presenter.onResume();
 
     // Then
-    //verify(mockRouter, times(1)).getDataFromPreviousScreen();
     verify(mockView, times(1))
         .displayData(vmCaptor.capture());
     String data = vmCaptor.getValue().data;
@@ -92,14 +85,11 @@ public class HelloMockitoTests {
 
     // Given
     when(mockContext.getString(R.string.empty_message)).thenReturn(EMPTY_MSG);
-    //when(mockRouter.getDataFromPreviousScreen()).thenReturn(null);
-    //HelloContract.Presenter presenter = new HelloPresenter(new HelloState());
     AppMediator mediator = AppMediator.getInstance();
     HelloContract.Presenter presenter = new HelloPresenter(mediator);
     HelloContract.Model model =
         new HelloModel(mockContext.getString(R.string.empty_message));
     presenter.injectModel(model);
-    //presenter.injectRouter(mockRouter);
     presenter.injectView(new WeakReference<>(mockView));
 
 
@@ -108,7 +98,6 @@ public class HelloMockitoTests {
     presenter.onResume();
 
     // Then
-    //verify(mockRouter, times(1)).getDataFromPreviousScreen();
     verify(mockView, times(1))
         .displayData(vmCaptor.capture());
     String data = vmCaptor.getValue().data;
@@ -123,14 +112,11 @@ public class HelloMockitoTests {
     when(mockContext.getString(R.string.bye_message)).thenReturn(BYE_MSG);
     HelloState state = new HelloState();
     state.data= mockContext.getString(R.string.bye_message);
-    //when(mockRouter.getDataFromPreviousScreen()).thenReturn(state);
-    //HelloContract.Presenter presenter = new HelloPresenter(new HelloState());
     AppMediator mediator = AppMediator.getInstance();
     HelloContract.Presenter presenter = new HelloPresenter(mediator);
     HelloContract.Model model =
         new HelloModel(mockContext.getString(R.string.hello_message));
     presenter.injectModel(model);
-    //presenter.injectRouter(mockRouter);
     presenter.injectView(new WeakReference<>(mockView));
     mediator.setHelloState(state);
 
@@ -139,7 +125,6 @@ public class HelloMockitoTests {
     presenter.onResume();
 
     // Then
-    //verify(mockRouter, times(1)).getDataFromPreviousScreen();
     verify(mockView, times(1))
         .displayData(vmCaptor.capture());
     String data = vmCaptor.getValue().data;
