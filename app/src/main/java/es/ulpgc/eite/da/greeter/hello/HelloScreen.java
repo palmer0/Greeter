@@ -18,13 +18,14 @@ public class HelloScreen {
 
     //AppMediator mediator = (AppMediator) context.get().getApplication();
     AppMediator mediator = AppMediator.getInstance();
-    HelloState state = mediator.getHelloState();
+    //HelloState state = mediator.getHelloState();
 
-    HelloContract.Router router = new HelloRouter(mediator);
-    HelloContract.Presenter presenter = new HelloPresenter(state);
+    //HelloContract.Router router = new HelloRouter(mediator);
+    //HelloContract.Presenter presenter = new HelloPresenter(state);
+    HelloContract.Presenter presenter = new HelloPresenter(mediator);
     HelloContract.Model model = new HelloModel(message);
     presenter.injectModel(model);
-    presenter.injectRouter(router);
+    //presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));
 
     view.injectPresenter(presenter);
