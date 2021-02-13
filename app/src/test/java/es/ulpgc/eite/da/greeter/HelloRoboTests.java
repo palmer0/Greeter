@@ -13,6 +13,7 @@ import es.ulpgc.eite.da.greeter.hello.HelloActivity;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
+@SuppressWarnings("ALL")
 @RunWith(RobolectricTestRunner.class)
 public class HelloRoboTests {
 
