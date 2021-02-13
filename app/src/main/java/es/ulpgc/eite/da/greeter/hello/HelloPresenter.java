@@ -69,7 +69,7 @@ public class HelloPresenter implements HelloContract.Presenter {
   }
 
   private HelloState getDataFromPreviousScreen() {
-    return null;
+    return mediator.getHelloState();
   }
 
   @Override
