@@ -73,8 +73,9 @@ public class HelloMockitoTests {
     presenter.onResume();
 
     // Then
-    verify(mockView, times(1))
-        .displayData(vmCaptor.capture());
+    verify(
+        mockView, times(1)
+    ).displayData(vmCaptor.capture());
     String data = vmCaptor.getValue().data;
     assertEquals(HELLO_MSG, data);
   }
@@ -98,8 +99,9 @@ public class HelloMockitoTests {
     presenter.onResume();
 
     // Then
-    verify(mockView, times(1))
-        .displayData(vmCaptor.capture());
+    verify(
+        mockView, times(1)
+    ).displayData(vmCaptor.capture());
     String data = vmCaptor.getValue().data;
     assertEquals(EMPTY_MSG, data);
   }
@@ -125,8 +127,9 @@ public class HelloMockitoTests {
     presenter.onResume();
 
     // Then
-    verify(mockView, times(1))
-        .displayData(vmCaptor.capture());
+    verify(
+        mockView, times(1)
+    ).displayData(vmCaptor.capture());
     String data = vmCaptor.getValue().data;
     assertEquals(BYE_MSG, data);
   }
