@@ -12,7 +12,6 @@ import es.ulpgc.eite.da.greeter.hello.HelloViewModel;
 
 import static org.junit.Assert.assertEquals;
 
-
 public class HelloUnitTests {
 
   private static final String EMPTY_MSG = "???";
@@ -87,7 +86,6 @@ public class HelloUnitTests {
       }
     }
 
-
     // Given
     AppMediator mediator = AppMediator.getInstance();
     HelloContract.Presenter presenter = new HelloPresenter(mediator);
@@ -121,7 +119,6 @@ public class HelloUnitTests {
         return data;
       }
     }
-
 
     class MockHelloActivity implements HelloContract.View{
 
@@ -191,7 +188,6 @@ public class HelloUnitTests {
 
       }
     }
-
 
     // Given
     AppMediator mediator = AppMediator.getInstance();
